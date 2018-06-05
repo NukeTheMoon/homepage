@@ -43,7 +43,8 @@
     "extends": "eslint:recommended",
     "rules": {},
     "env": {
-      "amd": true
+      "amd": true,
+      "browser": true
     }
   }
 }

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-$font: 'Raleway', sans-serif;
+$font: 'Raleway', Helvetica, Myriad Pro, Arial, sans-serif;
 $background: #1e0b5d;
 $primary: #fff;
 $accent: #4e1dfe;
@@ -18,7 +18,7 @@ h1,p,span,a {
   }
 
   &.small {
-    font-size: 15pt;
+    font-size: 15px;
   }
 
   &.accent {
@@ -27,12 +27,12 @@ h1,p,span,a {
 }
 
 h1 {
-  font-size: 60pt;
+  font-size: 60px;
   font-weight: 700;
 }
 
 p {
-  font-size: 25pt;
+  font-size: 25px;
 }
 
 a {
@@ -49,6 +49,52 @@ button {
   background-color: $accent;
   color: $primary;
   text-transform: uppercase;
-  font-size: 15pt;
+  font-family: $font;
+  font-size: 15px;
   font-weight: 700;
+  border-style: none;
+  height: 46px;
+  padding: 0 60px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content {
+  margin-left: 150px;
+  z-index: 10;
+  position: relative;
+}
+
+.catchphrase {
+  margin-top: 160px;
+}
+
+.introduction {
+  margin-top: 20px;
+}
+
+.recruitment {
+  margin-top: 64px;
+}
+
+.cv {
+  margin-right: 15px;
+}
+
+.links {
+  margin-top: 220px;
+
+  a:not(:last-child) {
+    margin-right: 30px;
+  }
 }

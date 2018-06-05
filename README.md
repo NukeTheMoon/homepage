@@ -4,8 +4,7 @@ Personal website for career purposes. I tried to keep everything as tidy as I co
 
 ## Requires
 
-* node.js
-* npm
+* node.js 6.9.1
 
 ## Installation
 `npm update`
