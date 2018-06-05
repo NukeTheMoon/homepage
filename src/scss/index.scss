@@ -1,7 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 $font: 'Raleway', sans-serif;
+$background: #1e0b5d;
+$primary: #fff;
+$accent: #4e1dfe;
 
 body {
-  background-color: greenyellow;
+  background-color: $background;
+}
 
+h1,p,span,a {
+  font-family: $font;
+  color: $primary;
+
+  &::selection {
+    background: none;
+    color: $accent;
+  }
+}
+
+.accent {
+  color: $accent;
 }
