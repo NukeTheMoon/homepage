@@ -11,6 +11,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader"
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     // fallback to style-loader in development
@@ -48,6 +53,6 @@ module.exports = {
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true,
             useShortDoctype: true
-        })
+        }),
     ]
 };

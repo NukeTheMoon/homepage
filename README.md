@@ -12,5 +12,7 @@ Personal website for career purposes. I tried to keep everything as tidy as I co
 
 `npm run build`
 
+Output files are located in the dist folder.
+
 ## Development
 `npm run watch`
