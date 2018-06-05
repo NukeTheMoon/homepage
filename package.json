@@ -40,6 +40,7 @@
     "webpack-cli": "^3.0.2"
   },
   "dependencies": {
+    "hoek": "^5.0.3",
     "npm-watch": "^0.3.0"
   }
 }
