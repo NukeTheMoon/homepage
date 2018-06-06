@@ -7,7 +7,7 @@ Personal website for career purposes. I tried to keep everything as tidy as I co
 * node.js 6.9.1
 
 ## Installation
-`npm update`
+`npm install`
 
 `npm run build`
 

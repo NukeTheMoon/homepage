@@ -44,7 +44,7 @@ options3.targetId = 'shooting3';
 //                    the previous one is gone
 //      -> min            (0:infinity) shortest random delay
 //      -> max            (0:infinity) longest random delay
-var shootingStars = function(options) {
+var ShootingStars = function(options) {
     var canvas = document.getElementById(options.targetId);
     var ctx = canvas.getContext('2d');
     var star = null;
@@ -217,6 +217,6 @@ var shootingStars = function(options) {
     window.requestAnimationFrame(draw);
 };
 
-new shootingStars(options1);
-new shootingStars(options2);
-new shootingStars(options3);
+new ShootingStars(options1);
+new ShootingStars(options2);
+new ShootingStars(options3);
