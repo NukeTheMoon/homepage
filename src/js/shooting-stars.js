@@ -1,5 +1,3 @@
-// TODO: react to viewport resize event
-
 var options1 = {
     targetId: 'shooting1',
     color: {
@@ -11,7 +9,7 @@ var options1 = {
     distance: 220,
     linger: 10,
     decayTreshold: 0.4,
-    speed: 4,
+    speed: 5,
     delay: {
         min: 50,
         max: 12000
@@ -40,7 +38,7 @@ options3.targetId = 'shooting3';
 //                    below this value, decay of the trail tip color stop will begin
 //     speed          (0:infinity) star travel speed multiplier, 1 is 1px travelled per
 //                    animation frame
-//     delay          random delay between star spawns. a new star won't spawn until
+//     delay          (object) random delay between star spawns. a new star won't spawn until
 //                    the previous one is gone
 //      -> min            (0:infinity) shortest random delay
 //      -> max            (0:infinity) longest random delay
@@ -211,6 +209,10 @@ var ShootingStars = function(options) {
         canvas.setAttribute('width', window.innerWidth);
         canvas.setAttribute('height', window.innerHeight);
     };
+
+    window.addEventListener('resize', function() {
+        resizeCanvas();
+    });
 
     resizeCanvas();
     timer.reset();

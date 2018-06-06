@@ -1,6 +1,10 @@
 var options = {
     targetId: 'starfield',
-    amount: 600,
+    amount: {
+        mobile: 200,
+        tablet: 400,
+        desktop: 600
+    },
     color: '#FFFFFF',
     maxAlpha: 0.7,
     size: 1,
@@ -15,9 +19,23 @@ var Starfield = function(options) {
     var canvas = document.getElementById(options.targetId);
     var ctx = canvas.getContext('2d');
 
+    var isHighDensity = function() {
+        // https://stackoverflow.com/a/20413768
+        return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 124dpi), only screen and (min-resolution: 1.3dppx), only screen and (min-resolution: 48.8dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)').matches)) || (window.devicePixelRatio && window.devicePixelRatio > 1.3));
+    }
+
+    var amountByDevice = function() {
+        if (window.innerWidth < 640 || (isHighDensity() && window.innerWidth < 320)) {
+            return options.amount.mobile;
+        } else if (window.innerWidth < 1920 || (isHighDensity() && window.innerWidth < 960)) {
+            return options.amount.tablet;
+        }
+        return options.amount.desktop;
+    };
+
     var draw = function() {
         ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        for (var i = 0; i < options.amount; ++i) {
+        for (var i = 0; i < amountByDevice(); ++i) {
             if (options.pos[i]) {
                 twinkle(options.pos[i]);
             } else {
@@ -53,6 +71,26 @@ var Starfield = function(options) {
         canvas.setAttribute('width', window.innerWidth);
         canvas.setAttribute('height', window.innerHeight);
     };
+
+    var windowExpandedTooMuch = function() {
+        var treshold = 50;
+        return window.innerWidth - canvas.getAttribute('width') > treshold
+            || window.innerHeight - canvas.getAttribute('height') > treshold;
+    };
+
+    var windowShrunk = function() {
+        return window.innerWidth < canvas.getAttribute('width')
+            || window.innerHeight < canvas.getAttribute('height');
+    };
+
+    window.addEventListener('resize', function(){
+        if (windowExpandedTooMuch()) {
+            resizeCanvas();
+            options.pos = [];
+        } else if (windowShrunk()) {
+            resizeCanvas();
+        }
+    });
 
     resizeCanvas();
     window.requestAnimationFrame(draw);
