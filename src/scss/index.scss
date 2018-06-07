@@ -3,6 +3,8 @@ $font: 'Raleway', Helvetica, Myriad Pro, Arial, sans-serif;
 $background: #1e0b5d;
 $primary: #fff;
 $accent: #4e1dfe;
+$breakpoint-s: 420px;
+$breakpoint-m: 960px;
 
 body {
   background-color: $background;
@@ -19,20 +21,40 @@ h1,p,span,a {
 
   &.small {
     font-size: 15px;
+
+    @media all and (max-width: $breakpoint-m) {
+      font-size: 13px;
+    }
   }
 
   &.accent {
     color: $accent;
+  }
+
+  @media all and (max-width: $breakpoint-s) {
+    text-align: center;
   }
 }
 
 h1 {
   font-size: 60px;
   font-weight: 700;
+
+  @media all and (max-width: $breakpoint-m) {
+    font-size: 45px;
+  }
+
+  @media all and (max-width: $breakpoint-s) {
+    font-size: 42px;
+  }
 }
 
 p {
   font-size: 25px;
+
+  @media all and (max-width: $breakpoint-m) {
+    font-size: 16px;
+  }
 }
 
 a {
@@ -59,10 +81,18 @@ button {
   &:hover {
     cursor: pointer;
   }
+
+  @media all and (max-width: $breakpoint-m) {
+    margin-bottom: 15px;
+  }
+
+  @media all and (max-width: $breakpoint-s) {
+    padding: 0 50px;
+  }
 }
 
 canvas {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   pointer-events: none;
@@ -70,13 +100,31 @@ canvas {
 }
 
 .content {
-  margin-left: 150px;
+  margin: 0 150px;
   z-index: 10;
   position: relative;
+
+  @media all and (max-width: $breakpoint-m) {
+    margin: 0 55px;
+    max-width: 255px;
+  }
+
+  @media all and (max-width: $breakpoint-s) {
+    margin: 0 auto;
+    max-width: 245px;
+  }
 }
 
 .catchphrase {
   margin-top: 160px;
+
+  @media all and (max-width: $breakpoint-m) {
+    margin-top: 150px;
+  }
+
+  @media all and (max-width: $breakpoint-s) {
+    margin-top: 110px;
+  }
 }
 
 .introduction {
@@ -89,12 +137,41 @@ canvas {
 
 .cv {
   margin-right: 15px;
+
+  @media all and (max-width: $breakpoint-s) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
-.links {
+.contact {
+  @media all and (max-width: $breakpoint-m) {
+    display: block;
+  }
+}
+
+.links-row {
   margin-top: 220px;
+  margin-bottom: 60px;
 
   a:not(:last-child) {
     margin-right: 30px;
+  }
+
+  @media all and (max-width: $breakpoint-m) {
+    margin-top: 60px;
+  }
+
+  @media all and (max-width: $breakpoint-s) {
+    text-align: center;
+  }
+}
+
+.links {
+  @media all and (max-width: $breakpoint-s) {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

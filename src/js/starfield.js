@@ -11,7 +11,7 @@ var options = {
     pos: [],
     twinkle: {
         magnitude: 0.3,
-        treshold: 0.5
+        threshold: 0.5
     }
 };
 
@@ -57,7 +57,7 @@ var Starfield = function(options) {
     };
 
     var twinkle = function(s) {
-        if (s.alpha > options.twinkle.treshold) {
+        if (s.alpha > options.twinkle.threshold) {
             ctx.globalAlpha = Math.max(0, s.alpha - (Math.round(Math.random()) ? 0 : Math.random() * options.twinkle.magnitude));
         } else {
             ctx.globalAlpha = s.alpha;
@@ -73,9 +73,9 @@ var Starfield = function(options) {
     };
 
     var windowExpandedTooMuch = function() {
-        var treshold = 50;
-        return window.innerWidth - canvas.getAttribute('width') > treshold
-            || window.innerHeight - canvas.getAttribute('height') > treshold;
+        var threshold = 50;
+        return window.innerWidth - canvas.getAttribute('width') > threshold
+            || window.innerHeight - canvas.getAttribute('height') > threshold;
     };
 
     var windowShrunk = function() {
