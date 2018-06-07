@@ -8,6 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <style>
+        html {
+            background-color: #1e0b5d;
+        }
+        body {
+            visibility: hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,20 +28,22 @@
     </p>
     <div class="recruitment">
         <button class="cv">
-            Download CV
+            <span>Download CV</span>
         </button>
         <span class="contact small">or write to <a href="mailto:arcybartek@gmail.com">arcybartek@gmail.com</a></span>
     </div>
     <div class="links-row">
         <div class="links">
-            <a href="https://www.github.com"><img src="" alt="GitHub"></a>
-            <a href="https://www.linkedin.com"><img src="" alt="LinkedIn"></a>
+            <a class="github" href="https://www.github.com"></a>
+            <a class="linkedin" href="https://www.linkedin.com"></a>
         </div>
     </div>
 </div>
 <canvas id="starfield"></canvas>
 <canvas id="shooting1"></canvas>
+<div class="planet-far"></div>
 <canvas id="shooting2"></canvas>
+<div class="planet-near"></div>
 <canvas id="shooting3"></canvas>
 <script src="bundle.js"></script>
 </body>

@@ -33,6 +33,17 @@ module.exports = {
                     'extract-loader',
                     'html-loader'
                 ]
+            },
+            {
+                test: /\.svg$/,
+                use: {
+                    loader: 'svg-url-loader',
+                    options: {
+                        noquotes: true,
+                        iesafe: true
+                    }
+
+                }
             }
         ]
     },
