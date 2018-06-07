@@ -66,6 +66,7 @@ p {
 a {
   text-decoration: none;
   font-weight: 700;
+  position: relative;
 }
 
 b {
@@ -202,6 +203,23 @@ canvas {
   }
 }
 
+.email {
+  &:hover:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $accent-hover;
+    z-index: -1;
+  }
+
+  &:active:before {
+    background-color: $accent-click;
+  }
+}
+
 .links-row {
   margin-top: 220px;
   margin-bottom: 60px;
@@ -237,7 +255,7 @@ canvas {
   background-image: url('../img/linkedin.svg');
   width: 82px;
   height: 21px;
-  transform: translateY(3px);
+  top: 3px;
   display: inline-block;
 }
 

@@ -60,5 +60,6 @@ typings/
 # next.js build output
 .next
 
-# output folder
-dist/
+# output files
+dist/*.html
+dist/*.js
