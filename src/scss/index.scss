@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 $font: 'Raleway', Helvetica, Myriad Pro, Arial, sans-serif;
-$background: #1e0b5d;
+$background: #140642;
 $primary: #fff;
 $accent: #4e1dfe;
 $accent-hover: #310ab9;
@@ -82,6 +82,7 @@ button {
   position: relative;
   transition: background-color 0.3s;
   overflow: hidden;
+  outline: none;
 
   &:hover {
     cursor: pointer;

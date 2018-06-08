@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 
@@ -64,7 +65,7 @@ module.exports = {
             chunkFilename: "[id].css"
         }),
         new HtmlMinifierPlugin({
-            collapseWhitespace: true,
+            collapseWhitespace: false,
             minifyURLs: true,
             removeAttributeQuotes: true,
             removeComments: true,
@@ -73,7 +74,11 @@ module.exports = {
             removeRedundantAttributes: true,
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true,
-            useShortDoctype: true
+            useShortDoctype: true,
+            ignoreCustomComments: [
+                /^\s+\/\//
+            ]
         }),
+        new webpack.BannerPlugin('Hello there!\n\nIt is so good to see you. :)\n\nEverything here is minified and stripped of excess fat. If you want to take a peek at the source code, please visit the project\'s github:\n\nhttps://github.com/NukeTheMoon/homepage\n\n- Bartek')
     ]
 };
