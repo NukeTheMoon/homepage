@@ -76,9 +76,8 @@ module.exports = {
             removeStyleLinkTypeAttributes: true,
             useShortDoctype: true,
             ignoreCustomComments: [
-                /^\s+\/\//
+                /^\s+☽/ // any comment that contains the string '☽' in its first line
             ]
-        }),
-        new webpack.BannerPlugin('Hello there!\n\nIt is so good to see you. :)\n\nEverything here is minified and stripped of excess fat. If you want to take a peek at the source code, please visit the project\'s github:\n\nhttps://github.com/NukeTheMoon/homepage\n\n- Bartek')
+        })
     ]
 };

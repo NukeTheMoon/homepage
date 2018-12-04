@@ -1,25 +1,29 @@
 var options1 = {
     targetId: 'shooting1',
     color: {
-        r: 78,
-        g: 29,
-        b: 254,
+        r: 240,
+        g: 255,
+        b: 255,
+        a: 1
+    },
+    color2: {
+        r: 0,
+        g: 46,
+        b: 255,
         a: 1
     },
     distance: 220,
-    linger: 10,
-    decayTreshold: 0.4,
+    linger: 35,
+    decayTreshold: 0.3,
     speed: 5,
     delay: {
-        min: 50,
-        max: 12000
+        min: 200,
+        max: 10000
     }
 };
 
 var options2 = JSON.parse(JSON.stringify(options1));
-var options3 = JSON.parse(JSON.stringify(options1));
 options2.targetId = 'shooting2';
-options3.targetId = 'shooting3';
 
 
 // options
@@ -108,10 +112,10 @@ var ShootingStars = function(options) {
             // 1: tip (newest pixel) of trail
             stops: [
                 {
-                    r: options.color.r,
-                    g: options.color.g,
-                    b: options.color.b,
-                    a: options.color.a
+                    r: options.color2.r,
+                    g: options.color2.g,
+                    b: options.color2.b,
+                    a: options.color2.a
                 },
                 {
                     r: options.color.r,
@@ -160,6 +164,8 @@ var ShootingStars = function(options) {
         grad.addColorStop(0, rgba(s.stops[0]));
         grad.addColorStop(1, rgba(s.stops[1]));
         ctx.strokeStyle = grad;
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
         ctx.beginPath();
         ctx.moveTo(s.start.x, s.start.y);
         ctx.lineTo(vector.x, vector.y);
@@ -221,4 +227,3 @@ var ShootingStars = function(options) {
 
 new ShootingStars(options1);
 new ShootingStars(options2);
-new ShootingStars(options3);

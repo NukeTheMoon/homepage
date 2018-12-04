@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<!-- //
+<!-- ☽
 
 Hello there!
 
@@ -25,9 +25,12 @@ https://github.com/NukeTheMoon/homepage
     <style>
         html {
             background-color: #140642;
+            min-height: 100%;
         }
         body {
             visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
         }
     </style>
 </head>
@@ -38,7 +41,7 @@ https://github.com/NukeTheMoon/homepage
         Together we will <span class="accent">rule</span> the galaxy
     </h1>
     <p class="introduction">
-        My name is Bartosz Jędrasik. I am a front end developer.
+        My name is Bartosz Jędrasik. I am a frontend developer.
     </p>
     <div class="recruitment">
         <button class="cv" onclick="window.open('Bartosz_Jedrasik_CV.pdf')">
@@ -58,7 +61,6 @@ https://github.com/NukeTheMoon/homepage
 <div class="planet-far"></div>
 <canvas id="shooting2"></canvas>
 <div class="planet-near"></div>
-<canvas id="shooting3"></canvas>
 <script src="bundle.js"></script>
 </body>
 

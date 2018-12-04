@@ -63,3 +63,6 @@ typings/
 # output files
 dist/*.html
 dist/*.js
+
+# IDEA user files
+.idea/
