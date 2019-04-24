@@ -17,14 +17,10 @@ var options1 = {
     decayTreshold: 0.3,
     speed: 5,
     delay: {
-        min: 200,
-        max: 10000
+        min: 10,
+        max: 3000
     }
 };
-
-var options2 = JSON.parse(JSON.stringify(options1));
-options2.targetId = 'shooting2';
-
 
 // options
 //     targetId        (string) target canvas to render onto
@@ -164,7 +160,7 @@ var ShootingStars = function(options) {
         grad.addColorStop(0, rgba(s.stops[0]));
         grad.addColorStop(1, rgba(s.stops[1]));
         ctx.strokeStyle = grad;
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.lineCap = 'round';
         ctx.beginPath();
         ctx.moveTo(s.start.x, s.start.y);
@@ -226,4 +222,3 @@ var ShootingStars = function(options) {
 };
 
 new ShootingStars(options1);
-new ShootingStars(options2);
